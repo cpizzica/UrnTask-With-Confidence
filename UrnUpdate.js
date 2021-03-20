@@ -274,8 +274,18 @@ post_trial_gap: 100
 	  stimulus_width: 900,
 	  maintain_aspect_ratio: true,
 	  prompt: "<p>Please select a bead color and your confidence in that choice.</p>",
-	  button_html: ['<button class="jspsych-btn" style="background-color:black; color:white">%choice%</button>','<button class="jspsych-btn" style="background-color:black; color:white">%choice%</button>','<button class="jspsych-btn" style="background-color:white; color:black">%choice%</button>', '<button class="jspsych-btn"style="background-color:white; color:black">%choice%</button>' ],
-	  choices: ['Black Bead-LOW Confidence', 'Black Bead-HIGH Confidence', 'White Bead-LOW Confidence', 'White Bead-HIGH Confidence'],
+	  button_html: ['<button class="jspsych-btn" style="background-color:black; color:white; display:block">%choice%</button>',
+	  				'<button class="jspsych-btn" style="background-color:black; color:white; display:block">%choice%</button>',
+	  				'<button class="jspsych-btn" style="background-color:white; color:black; display:block">%choice%</button>', 
+	  				'<button class="jspsych-btn"style="background-color:white; color:black; display:block">%choice%</button>' ],
+	  choices: ['Black Bead - HIGH Confidence', 'Black Bead - LOW Confidence', 'White Bead - HIGH Confidence', 'White Bead - LOW Confidence'],
+	  /* 
+	  button_html: ['<button class="jspsych-btn" style="background-color:black; color:white">%choice%</button>',
+	  				'<button class="jspsych-btn" style="background-color:black; color:white">%choice%</button>',
+	  				'<button class="jspsych-btn" style="background-color:white; color:black">%choice%</button>', 
+	  				'<button class="jspsych-btn"style="background-color:white; color:black">%choice%</button>' ],
+	  choices: ['Black Bead - LOW Confidence', 'Black Bead - HIGH Confidence', 'White Bead - LOW Confidence', 'White Bead - HIGH Confidence'],
+	  */
 	  on_start: function(trial){
 
           switch(FreshBlock) {
@@ -314,8 +324,11 @@ post_trial_gap: 100
   var SubjectChoice = {
 	  type: 'image-button-response',
 	  stimulus: '',
-	  choices:['Black Bead-LOW Confidence', 'Black Bead-HIGH Confidence', 'White Bead-LOW Confidence', 'White Bead-HIGH Confidence'],
-	  button_html: ['<button class="jspsych-btn" style="background-color:black; color:white">%choice%</button>','<button class="jspsych-btn" style="background-color:black; color:white">%choice%</button>','<button class="jspsych-btn" style="background-color:white; color:black">%choice%</button>', '<button class="jspsych-btn"style="background-color:white; color:black">%choice%</button>' ],
+	  button_html: ['<button class="jspsych-btn" style="background-color:black; color:white; display:block">%choice%</button>',
+	  				'<button class="jspsych-btn" style="background-color:black; color:white; display:block">%choice%</button>',
+	  				'<button class="jspsych-btn" style="background-color:white; color:black; display:block">%choice%</button>', 
+	  				'<button class="jspsych-btn"style="background-color:white; color:black; display:block">%choice%</button>' ],
+	  choices: ['Black Bead - HIGH Confidence', 'Black Bead - LOW Confidence', 'White Bead - HIGH Confidence', 'White Bead - LOW Confidence'],
 	  prompt: "<p>Please select a bead color and your confidence in that choice.</p>",
 	  stimulus_width: 900,
 	  maintain_aspect_ratio: true,
@@ -338,8 +351,11 @@ post_trial_gap: 100
   var BeadAppears = {
 	  type: 'image-button-response',
 	  stimulus: '',
-	  choices:['Black Bead-LOW Confidence', 'Black Bead-HIGH Confidence', 'White Bead-LOW Confidence', 'White Bead-HIGH Confidence'],
-	  button_html: ['<button class="jspsych-btn" style="background-color:black; color:white">%choice%</button>','<button class="jspsych-btn" style="background-color:black; color:white">%choice%</button>','<button class="jspsych-btn" style="background-color:white; color:black">%choice%</button>', '<button class="jspsych-btn"style="background-color:white; color:black">%choice%</button>' ],
+	  button_html: ['<button class="jspsych-btn" style="background-color:black; color:white; display:block">%choice%</button>',
+	  				'<button class="jspsych-btn" style="background-color:black; color:white; display:block">%choice%</button>',
+	  				'<button class="jspsych-btn" style="background-color:white; color:black; display:block">%choice%</button>', 
+	  				'<button class="jspsych-btn"style="background-color:white; color:black; display:block">%choice%</button>' ],
+	  choices: ['Black Bead - HIGH Confidence', 'Black Bead - LOW Confidence', 'White Bead - HIGH Confidence', 'White Bead - LOW Confidence'],
 	  prompt: "<p>Please select a bead color and your confidence in that choice.</p>",
 	  stimulus_width: 900,
 	  maintain_aspect_ratio: true,

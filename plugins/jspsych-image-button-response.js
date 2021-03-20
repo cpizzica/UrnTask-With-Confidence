@@ -170,9 +170,14 @@ jsPsych.plugins["image-button-response"] = (function() {
       var btngroup_div = document.createElement('div');
       btngroup_div.id = "jspsych-image-button-response-btngroup";
       html = '';
-      for (var i = 0; i < trial.choices.length; i++) {
-        var str = buttons[i].replace(/%choice%/g, trial.choices[i]);
-        html += '<div class="jspsych-image-button-response-button" style="display: inline-block; margin:'+trial.margin_vertical+' '+trial.margin_horizontal+'" id="jspsych-image-button-response-button-' + i +'" data-choice="'+i+'">'+str+'</div>';
+      for (var i = 0; i < trial.choices.length; i+=2) {
+        j = i+1;
+        var str1 = buttons[i].replace(/%choice%/g, trial.choices[i]);
+        var str2 = buttons[j].replace(/%choice%/g, trial.choices[j]);
+        html += '<div class="jspsych-btn-group"> ';
+        html += '<div class="jspsych-image-button-response-button" style="display: block; margin:'+trial.margin_vertical+' '+trial.margin_horizontal+'" id="jspsych-image-button-response-button-' + i +'" data-choice="'+i+'">'+str1+'</div>';
+        html += '<div class="jspsych-image-button-response-button" style="display: block; margin:'+trial.margin_vertical+' '+trial.margin_horizontal+'" id="jspsych-image-button-response-button-' + j +'" data-choice="'+j+'">'+str2+'</div>';
+        html += ' </div>';
       }
       btngroup_div.innerHTML = html;
       // add canvas to screen and draw image
@@ -209,10 +214,19 @@ jsPsych.plugins["image-button-response"] = (function() {
       }
       html += '<div id="jspsych-image-button-response-btngroup">';
 
-      for (var i = 0; i < trial.choices.length; i++) {
-        var str = buttons[i].replace(/%choice%/g, trial.choices[i]);
-        html += '<div class="jspsych-image-button-response-button" style="display: inline-block; margin:'+trial.margin_vertical+' '+trial.margin_horizontal+'" id="jspsych-image-button-response-button-' + i +'" data-choice="'+i+'">'+str+'</div>';
+      for (var i = 0; i < trial.choices.length; i+=2) {
+        j = i+1;
+        var str1 = buttons[i].replace(/%choice%/g, trial.choices[i]);
+        var str2 = buttons[j].replace(/%choice%/g, trial.choices[j]);
+        html += '<div class="jspsych-btn-group"> ';
+        html += '<div class="jspsych-image-button-response-button" style="display: block; margin:'+trial.margin_vertical+' '+trial.margin_horizontal+'" id="jspsych-image-button-response-button-' + i +'" data-choice="'+i+'">'+str1+'</div>';
+        html += '<div class="jspsych-image-button-response-button" style="display: block; margin:'+trial.margin_vertical+' '+trial.margin_horizontal+'" id="jspsych-image-button-response-button-' + j +'" data-choice="'+j+'">'+str2+'</div>';
+        html += ' </div>';
       }
+      /*for (var i = 0; i < trial.choices.length; i++) {
+        var str = buttons[i].replace(/%choice%/g, trial.choices[i]);
+        html += '<div class="jspsych-image-button-response-button" style="display: block; margin:'+trial.margin_vertical+' '+trial.margin_horizontal+'" id="jspsych-image-button-response-button-' + i +'" data-choice="'+i+'">'+str+'</div>';
+      }*/
       html += '</div>';
       // add prompt
       if (trial.prompt !== null){
